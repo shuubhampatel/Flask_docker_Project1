@@ -106,24 +106,38 @@
                 the root directory and then we have run the docker file by command <b> docker-compose</b> up to check
                 and verify
                 our image work locally on localhost and if everything looks good then we can create one repo to docker
-                hub and we can build image to push it docker hub to do so following are the commands.
+                hub and we can build image to push it docker hub to do so following are the command.<br><br>To build
+                image
+                we can type this command <b>docker build -t docker_username/repo_name: tag . (Note there is a (dot) at
+                    the end </b>
+                Because it tells that docker should look for the docker file in current directory.)
+                now your docker image is build and ready to push it to your docker hub repo.
                 before pushing do<b> docker run -dp 80:5000 docker_username/repo_name: tag </b>run that just built image
                 so
                 after that it will show your app in localhost:5000 because in docker file you mentioned 5000 port as
                 host and port 80 for docker container.Now you can push it to docker hub by following command:<br>
                 <b>docker push docker_username/repo_name: tag</b><br><br>
-                Now you image is pushed and you can pull it and if you want to modify then do it and apply docker commit
+                Now if your image is pushed in public repo then anyone can pull it and if you want to modify then do it
+                and apply docker commit
                 command and follow the same steps to push changed image to docker hub and give new tag to image before
                 pushing it.
             </p>
             </br>
 
             <h5>About dockerfile:</h5>
-            <p>To build image we can type this command <b>docker build -t docker_username/repo_name: tag . (Note there
-                is a
-                (dot) at the end </b>Because it tells that docker should look for the docker file in current directory.)
-                now
-                your docker image is build and ready to push it to your docker hub repo.
+            <p>Dockerfile is a simple text file that consists of instructions to build Docker images.The specific
+                commands you can use in a dockerfile are:
+            <ul>
+                - FROM - Creates a layer from the ubuntu:18.04<br>
+                - PULL - Adds files from your Docker repository<br>
+                - RUN - Builds your container<br>
+                - CMD - Specifies what command to run within the container<br>
+            </ul>
+            <p>Mentioned below is an example of the dockerfile with the important commands:</p>
+            <p> FROM ubuntu:18.04<br>
+                PULL. /file<br>
+                RUN make /file<br>
+                CMD python /file/file.py<br>
             </p>
 
         </div>
