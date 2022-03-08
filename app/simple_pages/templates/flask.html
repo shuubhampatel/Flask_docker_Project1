@@ -18,7 +18,7 @@
 
 
 <div class="container">
-   <div class="row row-auto">
+    <div class="row row-auto">
         <header class="mb-2">
             <!-- navbar -->
             <nav class="navbar navbar-expand-sm navbarcustomcolor">
@@ -40,9 +40,6 @@
                         <li class="nav-item ">
                             <a href="/cicd" class="nav-link navbarcustomfontcolor">CI/CD</a>
                         </li>
-                        <li class="nav-item ">
-                            <a href="/bootstrap" class="nav-link navbarcustomfontcolor">Bootstrap</a>
-                        </li>
                     </ul>
                 </div>
             </nav>
@@ -55,33 +52,128 @@
         <!-- col 1 -->
         <h4>Lets read about Python/ Flask</h4>
         <div class="col-8">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Nibh praesent tristique magna sit amet purus. At tempor commodo ullamcorper a
-                lacus. Arcu odio ut sem nulla pharetra diam sit. Imperdiet sed euismod nisi porta lorem. Mi bibendum
-                neque egestas congue quisque egestas diam in arcu. Faucibus et molestie ac feugiat. Sed blandit libero
-                volutpat sed. Malesuada fames ac turpis egestas maecenas. Quis viverra nibh cras pulvinar mattis nunc.
-                Neque convallis a cras semper. Egestas pretium aenean pharetra magna ac placerat vestibulum. Mattis
-                vulputate enim nulla aliquet. Non odio euismod lacinia at quis risus sed vulputate odio. Sit amet est
-                placerat in egestas. Nulla facilisi nullam vehicula ipsum a arcu cursus. Non nisi est sit amet.
-                Fermentum et sollicitudin ac orci phasellus egestas tellus. Quis auctor elit sed vulputate mi sit.
-            </p>
+            <p>Flask is a Python-based web application framework. It belongs to the micro-framework category, which
+                means it doesn't rely on external libraries. The Werkzeug WSGI toolkit and the Jinja2 template engine
+                are the foundations of Flask. so lets understand different terms and technologies in brief:</p>
             <p>
-                Augue neque gravida in fermentum et sollicitudin. Id faucibus nisl tincidunt eget nullam non nisi est
-                sit. Eget mauris pharetra et ultrices neque ornare aenean euismod. Diam maecenas ultricies mi eget. At
-                volutpat diam ut venenatis. Viverra justo nec ultrices dui sapien eget mi proin sed. Mi in nulla posuere
-                sollicitudin aliquam ultrices sagittis orci a. Id faucibus nisl tincidunt eget nullam non nisi est. Sed
-                pulvinar proin gravida hendrerit lectus a. Suscipit adipiscing bibendum est ultricies integer quis
-                auctor elit. Curabitur vitae nunc sed velit. Mattis aliquam faucibus purus in massa.
+            <ul>
+                <li><b>Web Framework:</b> it means it have collection of libraries and modules that enables a web
+                    application
+                    developer to write applications by simply just importing them.
+                </li>
+
+                <li><b>Flask:</b> as discussed above is a web application framework written in Python and its based on
+                    Werkzeug
+                    WSGI toolkit and Jinja2 template engine.
+                </li>
+
+                <li><b> WSGI:</b> Web Server Gateway Interface (WSGI) has been adopted as a standard for Python web
+                    application
+                    development. WSGI is a specification for a universal interface between the web server and the web
+                    applications.
+                </li>
+
+                <li><b>Werkzeug:</b> its a toolkit of WSGI which implements requests, response objects, and other
+                    utility
+                    functions.
+                </li>
+
+                <li><b>jinja2: </b>Jinja2 is a popular templating engine for Python. A web templating system combines a
+                    template
+                    with a certain data source to render dynamic web pages.
+                </li>
+            </ul>
             </p>
-            </p> Pretium fusce id velit ut tortor. Vitae proin sagittis nisl rhoncus mattis rhoncus urna neque.
-            Venenatis
-            cras sed felis eget. Purus in mollis nunc sed. Elit ut aliquam purus sit amet luctus venenatis.
-            Facilisis volutpat est velit egestas. Amet risus nullam eget felis eget. Quis risus sed vulputate odio
-            ut enim blandit volutpat maecenas. Egestas dui id ornare arcu. Sociis natoque penatibus et magnis dis
-            parturient montes nascetur. Sit amet commodo nulla facilisi nullam vehicula ipsum a arcu. Facilisis
-            gravida neque convallis a cras semper. Nunc id cursus metus aliquam eleifend mi in. In dictum non
-            consectetur a. Senectus et netus et malesuada fames ac. Lacinia at quis risus sed vulputate odio. Congue
-            eu consequat ac felis. Enim sit amet venenatis urna cursus. Nulla aliquet porttitor lacus luctus.</p>
+            <h5>Lets now talk about Pytest :</h5>
+            <p>
+                PyTest is built in such a way that it is very extensible, making it simple to develop plugins, and there
+                are many plugins in PyTest that are used for diverse reasons. Before releasing the code into production,
+                it is critical to test it thoroughly.
+                So in this application, I used to test every page by checking status code 200, so if we get status code
+                200, then our test will pass, and if my page is not loading, then it will give status code 404, which
+                means the page is missing. Currently, according to my test function, it is expecting code 200 and all my
+                pages are loading. That means it will surely open after it gets deployed. </p>
+            <p>In image 1 there is function
+                that first check for<b> /flask</b> page and if there is a page and its loading so it will match 200
+                status
+                code with this function and also it will match with one line so of that page that we gave to this
+                functions ("<b>Lets read about Python/ Flask </b>")to check there is exact same content in the page or
+                not? If
+                not that means it will going to faill. The reason behind adding this because developer can make a
+                mistake in giving a page name, so this is kind of a 2nd verification of our page test.
+            </p>
+            <h5><b>Project Layout:</b></h5>
+            <p>
+            <ul>
+                <li><b>.github</b>
+                    <ul>
+                        <li><b>workflows :</b></li>
+                        <ul>
+                            <li>development.yml: development workflow only trigger when we get pull request on brach master. </li>
+                            <li>production.yml : production workflow wil trigger when we push to master branch.</li>
+                        </ul>
+                    </ul>
+                </li>
+                <li>
+                    <b>.pytest_cache: </b>cache file for pytest
+                </li>
+                <li>app
+                    <ul>
+                        <li><b>simple_pages:</b></li>
+                        <ul>
+                            <li><b>templates:</b></li>
+                            <ul>
+                                <li>bootstrap.html : content page</li>
+                                <li>cicd.html:content page</li>
+                                <li>docker.html: content page</li>
+                                <li>flask.html: content page</li>
+                                <li>git.html: content page</li>
+                                <li>index.html: Home page</li>
+                            </ul>
+                            <li><b>__init__.py :</b> this file use to redirect pages unisg simple pages</li>
+                        </ul>
+
+                        <li><b>static</b></li>
+                        <ul>
+                            <li>css </li>
+                            <li>images</li>
+                            <li>js</li>
+                        </ul>
+                        </li>
+                        <li><b>templates : </b>base HTML file</li>
+                        <li><b>__init__.py:</b> :it will create flask instance.</li>
+                        <li><b>run.py :</b> it will trigger gunicorn server</li>
+                        </li>
+                    </ul>
+                </li>
+                <li><b>test</b>
+                    <ul>
+                        <li><b>__init__.py :</b> no use</li>
+                        <li><b>conftest.py :</b> config file for testing.</li>
+                        <li><b>simple_pages_test.py: </b>this file contains all the test methods for all of the pages</li>
+                    </ul>
+                </li>
+                <li>
+                    <b>.gitignore:</b>A gitignore file specifies intentionally untracked files that Git should ignore.
+                </li>
+                <li>
+                   <b> docker-compose.yml :</b> this file specifies what images are required, what ports they need to expose,
+                    whether they have access to the host filesystem, what commands should be run when they start up
+                </li>
+                <li>
+                    <b>Dockerfile:</b>A Dockerfile is a text document that contains all the commands a user could call on the command line to assemble an image
+                </li>
+                <li>
+                   <b> readme.md </b>:A README file contains information about general directory/ project information.
+                </li>
+                <li>
+                   <b> requirments.txt :</b> this file contains all type of file that usually stores information about all the
+                    libraries, modules, and packages in itself that are used while developing a particular project.
+                </li>
+            </ul>
+
+
+            </p>
         </div>
         <!-- col 1 end -->
         <!-- col 2 for images -->
@@ -89,22 +181,30 @@
         <div class="col">
             <!-- row 1 image1 -->
             <div class="row mb-3">
-                <img src="..." class="img-fluid" alt="Image 1">
+                <img src="{{ url_for('static', filename='images/flask1.png') }}" class="img-fluid mb-5 border"
+                     alt="test page screenshot">
             </div>
             <!-- row 1 image1 end -->
             <!-- row 2 image2 -->
 
             <div class="row mb-3">
-                <img src="..." class="img-fluid" alt="Image 2">
+                <img src="{{ url_for('static', filename='images/flask4.png') }}" class="img-fluid mb-5 border"
+                     alt="index test page screenshot">
             </div>
             <!-- row 2 image2 end -->
             <!-- row 3 image3 -->
 
             <div class="row mb-3">
-                <img src="..." class="img-fluid" alt="Image 3">
+                <img src="{{ url_for('static', filename='images/flask2.png') }}" class="img-fluid mb-5 border"
+                     alt="Project outline">
             </div>
             <!-- row 3 image3 end -->
-
+            <!-- row 3 image4  -->
+            <div class="row mb-3">
+                <img src="{{ url_for('static', filename='images/flask3.png') }}" class="img-fluid mb-5 border"
+                     alt="Project outline">
+            </div>
+            <!-- row 3 image4 end -->
         </div>
         <!-- col 2 for images end-->
 
@@ -128,3 +228,4 @@
 <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
 </body>
 </html>
+>
