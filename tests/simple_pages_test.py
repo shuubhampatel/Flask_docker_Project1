@@ -9,7 +9,6 @@ def test_request_main_menu_links(client):
     assert b'<a href="/docker" class="nav-link navbarcustomfontcolor">Docker</a>' in response.data
     assert b'<a href="/flask" class="nav-link navbarcustomfontcolor">Python/ ' in response.data
     assert b'<a href="/cicd" class="nav-link navbarcustomfontcolor">CI/CD</a>' in response.data
-    assert b'<a href="/bootstrap" class="nav-link navbarcustomfontcolor">Boot' in response.data
 
 
 def test_request_example(client):
@@ -45,10 +44,3 @@ def test_cicd_page(client):
     response = client.get("/cicd")
     assert response.status_code == 200
     assert b"Lets read about CI/CD" in response.data
-
-
-def test_bootstrap_page(client):
-    """This makes the bootstrap page"""
-    response = client.get("/bootstrap")
-    assert response.status_code == 200
-    assert b"Lets read about Bootstrap" in response.data
