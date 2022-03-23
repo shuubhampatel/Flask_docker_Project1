@@ -15,7 +15,7 @@ def test_request_example(client):
     """This makes the index page"""
     response = client.get("/")
     assert response.status_code == 200
-    assert b"Welcome to Home Page" in response.data
+    assert b"IS601 Project2" in response.data
 
 
 def test_git_page(client):
