@@ -6,7 +6,7 @@ class Division:
 
     @staticmethod
     def divide(value_1, value_2):
-        """ This is the add method"""
+        """ This is the Divide method"""
         try:
             return value_1 / value_2
         except ZeroDivisionError:
