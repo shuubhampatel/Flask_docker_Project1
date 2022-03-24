@@ -4,7 +4,7 @@ import datetime
 
 
 def utility_text_processors():
-    message = "This website is made as as project under subject IS601"
+    message = "This development work done under subject IS601"
 
     def deployment_environment():
         return getenv('FLASK_ENV', None)
@@ -15,12 +15,8 @@ def utility_text_processors():
         year = date.strftime("%Y")
         return year
 
-    def format_price(amount, currency="$"):
-        return f"{currency}{amount:.2f}"
-
     return dict(
         mymessage=message,
         deployment_environment=deployment_environment(),
         year=current_year(),
-        format_price=format_price
     )

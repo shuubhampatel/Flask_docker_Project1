@@ -1,5 +1,5 @@
 """Calculation and Addition, Multiplication, and Subtraction Classes """
-from calculator.operations import Addition as Add, Subtraction as Sub, Multiplication as Mult
+from calculator.operations import Addition as Add, Subtraction as Sub, Multiplication as Mult, Division as Div
 
 
 class Calculation:
@@ -29,15 +29,15 @@ class Calculation:
         return tuple(list_values_float)
 
 
-class Addition(Calculation):
-    """ calculation addition class"""
+class Division(Calculation):
+    """Division calculation object"""
 
     def get_result(self):
-        """get the addition results"""
-        sum_of_values = 0.0
+        """get the Division results"""
+        result = 1.0
         for value in self.values:
-            sum_of_values = Add.add(value, sum_of_values)
-        return sum_of_values
+            result = Div.divide(result, value) # 1/1 -->1  --> loop ++ --> 1/2 --> 0.5 will be return
+        return result
 
 
 class Multiplication(Calculation):
@@ -49,6 +49,17 @@ class Multiplication(Calculation):
         for value in self.values:
             result = Mult.multiply(result, value)
         return result
+
+
+class Addition(Calculation):
+    """ calculation addition class"""
+
+    def get_result(self):
+        """get the addition results"""
+        sum_of_values = 0.0
+        for value in self.values:
+            sum_of_values = Add.add(value, sum_of_values)
+        return sum_of_values
 
 
 class Subtraction(Calculation):

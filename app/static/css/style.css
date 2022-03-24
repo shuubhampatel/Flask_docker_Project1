@@ -21,3 +21,15 @@ body {
     color: black;
 }
 
+.rightside {
+
+    text-align: right;
+}
+.leftside {
+
+    text-align: left;
+}
+
+.centerfooter{
+    text-align: center;
+}

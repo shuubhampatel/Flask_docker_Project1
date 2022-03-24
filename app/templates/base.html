@@ -32,20 +32,20 @@
                             <h3><i class="bi bi-house-door-fill"></i>IS601 Project2</h3></a>
                     </div>
                     <ul class="navbar-nav ms-auto ">
-                        <li class="nav-item active">
+                        <li class="nav-item ">
                             <a href="/" class="nav-link active navbarcustomfontcolor">Home</a>
                         </li>
                         <li class="nav-item ">
-                            <a href="/git" class="nav-link navbarcustomfontcolor">Git</a>
+                            <a href="/pylint" class="nav-link navbarcustomfontcolor centerfooter">Pylint & General definitions</a>
                         </li>
                         <li class="nav-item ">
-                            <a href="/docker" class="nav-link navbarcustomfontcolor">Docker</a>
+                            <a href="/aaa" class="nav-link navbarcustomfontcolor">AAA testing</a>
                         </li>
                         <li class="nav-item ">
-                            <a href="/flask" class="nav-link navbarcustomfontcolor">Python/ Flask</a>
+                            <a href="/oops" class="nav-link navbarcustomfontcolor">OOPs</a>
                         </li>
                         <li class="nav-item ">
-                            <a href="/cicd" class="nav-link navbarcustomfontcolor">CI/CD</a>
+                            <a href="/solid" class="nav-link navbarcustomfontcolor">SOLID</a>
                         </li>
                     </ul>
                 </div>
@@ -58,8 +58,12 @@
         {% endblock %}
     </div>
     <footer>
-        Environment: {{ deployment_environment }} - Copyright: {{ year }}
-        Message: {{ mymessage }} {{ format_price(100) }}
+        <div class=" row border">
+                <div class="centerfooter">Message: {{ mymessage }}</div>
+            <div class="col"> Environment: {{ deployment_environment }}</div>
+            <div class="col rightside">Copyright: {{ year }} </div>
+            </div>
+        </div>
     </footer>
 
 

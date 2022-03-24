@@ -1,6 +1,6 @@
 """Testing the Calculator"""
 # From specifies the namespace
-from calculator.calculations import Addition, Subtraction, Multiplication
+from calculator.calculations import Addition, Subtraction, Multiplication, Division
 
 
 def test_calculation_multiplication_instance():
@@ -44,3 +44,10 @@ def test_calculation_multiply_get_result_method():
     tuple_list = (1, 2)
     calculation = Multiplication.create(tuple_list)
     assert calculation.get_result() == 2
+
+
+def test_calculation_division_get_result_method():
+    """Testing the Calculator Division"""
+    tuple_list = (1, 2)
+    calculation = Division.create(tuple_list)
+    assert calculation.get_result() == 0.5

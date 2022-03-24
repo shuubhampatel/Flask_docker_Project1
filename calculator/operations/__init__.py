@@ -1,6 +1,27 @@
 """ These are the Operation Classes"""
 
 
+class Division:
+    """This is the Division class"""
+
+    @staticmethod
+    def divide(value_1, value_2):
+        """ This is the add method"""
+        try:
+            return value_1 / value_2
+        except ZeroDivisionError:
+            return "you can't divide by zero"
+
+
+class Multiplication:
+    """ This is the Multiplication class"""
+
+    @staticmethod
+    def multiply(value_1, value_2):
+        """ This is the add method"""
+        return value_1 * value_2
+
+
 class Addition:
     """ This is the addition class"""
 
@@ -19,12 +40,3 @@ class Subtraction:
     def subtract(value_1, value_2):
         """ This is the add method"""
         return value_1 - value_2
-
-
-class Multiplication:
-    """ This is the subtraction class"""
-
-    @staticmethod
-    def multiply(value_1, value_2):
-        """ This is the add method"""
-        return value_1 * value_2
