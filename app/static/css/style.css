@@ -33,3 +33,12 @@ body {
 .centerfooter{
     text-align: center;
 }
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+.card {
+    transition: transform 0.2s ease;
+    size: auto;
+  }
