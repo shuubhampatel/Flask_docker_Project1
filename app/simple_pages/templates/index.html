@@ -5,20 +5,22 @@
         <div id="carouselExampleControls" class="carousel slide " data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <a href="/pylint"><img src="{{ url_for('static', filename='images/pylint.png') }}" class="d-block w-100"
-                                        alt="pylint"></a>
+                    <a href="/pylint"><img src="{{ url_for('static', filename='images/pylint.png') }}"
+                                           class="d-block w-100"
+                                           alt="pylint"></a>
                 </div>
                 <div class="carousel-item ">
                     <a href="/aaa"><img src="{{ url_for('static', filename='images/aaa.png') }}"
-                                           class="d-block w-100" alt="aaa"></a>
+                                        class="d-block w-100" alt="aaa"></a>
                 </div>
                 <div class="carousel-item">
                     <a href="/oops"><img src="{{ url_for('static', filename='images/oops.png') }}"
-                                          class="d-block w-100" alt="oops"></a>
+                                         class="d-block w-100" alt="oops"></a>
                 </div>
                 <div class="carousel-item">
-                    <a href="/solid"><img src="{{ url_for('static', filename='images/solid.png') }}" class="d-block w-100"
-                                         alt="solid"></a>
+                    <a href="/solid"><img src="{{ url_for('static', filename='images/solid.png') }}"
+                                          class="d-block w-100"
+                                          alt="solid"></a>
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
@@ -39,12 +41,13 @@
     <div class="row class= mt-3 mb-3">
         <!-- card col 1 -->
         <div class="col-sm">
-            <div class="card" href="#" style="length:20rem;">
+            <div class="card" href="#">
                 <div class="card-body">
-                    <h5 class="card-title">Git</h5>
-                    <p class="card-text">GIT is Free and open source Version Control System (VCS) is a software
-                        that helps software developers to work together and maintain a complete history of their work
-                        and also it comes under distributed version control system (DVCS).
+                    <h5 class="card-title">Pylint</h5>
+                    <p class="card-text">Pylint is a static code analysis tool written in Python for the purpose of
+                        analysis. It may check for programming flaws, implement coding standards best practices,
+                        discover code violations, and advise reworking. It is totally customisable by the user and has
+                        built-in specific routines for controlling particular errors and alarms within the user's code.
                     </p>
                 </div>
             </div>
@@ -55,10 +58,13 @@
         <div class="col-sm">
             <div class="card" href="#">
                 <div class="card-body">
-                    <h5 class="card-title">Docker</h5>
-                    <p class="card-text">Docker is a software platform that makes it easier to create, execute, manage,
-                        and distribute apps. It accomplishes this by virtualizing the operating system of the machine on
-                        which it is installed.</p>
+                    <h5 class="card-title">AAA testing</h5>
+                    <p class="card-text">The AAA pattern is a pattern for structuring tests. It breaks each test down
+                        into three parts – Arrange, Act, and Assert – where each part is a step leading to the next. The
+                        <b>arrange</b> step sets up the test’s input values. The <b>act</b> step prompts the primary
+                        function being
+                        tested. And finally, the <b>assert</b> step verifies that the output of the function is what was
+                        expected.</p>
                 </div>
             </div>
         </div>
@@ -68,10 +74,18 @@
         <div class="col-sm">
             <div class="card" href="#">
                 <div class="card-body">
-                    <h5 class="card-title">Python/ Flask</h5>
-                    <p class="card-text">Flask is a Python-based web application framework. It belongs to the
-                        micro-framework category, which means it doesn't rely on external libraries. The Werkzeug WSGI
-                        toolkit and the Jinja2 template engine are the foundations of Flask.</p>
+                    <h5 class="card-title">OOPs Concepts</h5>
+                    <p class="card-text">Object-Oriented Programming (OOP) uses "objects" to model realworld objects.
+                        Object-Oriented Programming (OOP) consist of following some important concepts referred to as
+                        the OOPS
+                        concepts.
+                    <ul>
+                        <li>Encapsulation</li>
+                        <li>Inheritance</li>
+                        <li>Polymorphism</li>
+                        <li>Abstraction</li>
+                    </ul>
+                    </p>
 
                 </div>
             </div>
@@ -82,49 +96,42 @@
         <div class="col-sm">
             <div class="card" href="#">
                 <div class="card-body">
-                    <h5 class="card-title">CI/CD</h5>
-                    <p class="card-text">A continuous integration/continuous delivery (CI/CD) pipeline is a set of
-                        procedures that must be followed in order to deliver a new version of software. Continuous
-                        integration and continuous delivery (CI/CD) pipelines are a DevOps or site reliability
-                        engineering (SRE) activity designed to optimize software delivery.</p>
+                    <h5 class="card-title">SOLID principles</h5>
+                    <p class="card-text">SOLID is an acronym that stands for five object-oriented design principles that
+                        help you make the software more understandable, easier to maintain, and easier to extend.
+                    <ul>
+                        <li><b>S</b>ingle-responsibility</li>
+                        <li><b>O</b>pen-closed</li>
+                        <li><b>L</b>iskov Substitution</li>
+                        <li><b>I</b>nterface Segregation</li>
+                        <li><b>D</b>ependency Inversion</li>
+                    </ul>
+                    </p>
                 </div>
             </div>
         </div>
         <!-- card col 4 end -->
 
-        <!-- card col 5 -->
-        <div class="col-sm">
-            <div class="card" href="#">
-                <div class="card-body">
-                    <h5 class="card-title">Bootstrap</h5>
-                    <p class="card-text">Bootstrap consists of HTML and JS-based scripts for various web design-related
-                        functions and components such as forms, buttons, navigation, and many more. And it helps web
-                        developers build websites faster as they don’t need to worry about basic commands and functions.
-                        Also, you can add CSS to do more customization.</p>
-                </div>
-            </div>
-        </div>
-        <!-- card col 5 end -->
 
     </div>
     <!-- card row 1 end -->
 
     <!-- content row -->
     <div class="row">
-    <h3><p>Introduction about my self.</p></h3>
+        <h3><p>Introduction about My Self.</p></h3>
 
-    <p style="font-size: large">First of all, welcome to my website. My name is Shubham. I am a master in computer
-        science at NJIT and I have
-        done my bachelors in computer engineering. On top of that, I have 1+ years of IT support experience and also did
-        an internship as a software engineer. So far, I've created projects using the Django Framework, but this time I
-        got opportunity to learn Flask Framework for this project, so now I feel more confident in it.</p>
-    <p style="font-size: large">
-        I have created this homepage under the project of Web system development to get hands-on experience and to get
-        familiar with different technologies such as Docker, Git, Python-Flask, CI/CD, and Bootstrap, including Pytest,
-        which is used to test a page to verify whether it is successfully loading or not.</p>
-    <p style="font-size: large">To quickly refresh on Docker, Git, Python-Flask, CI/CD, and Bootstrap, click on the
-        navigation bar and go through each technology. Also, you can click on any carousel to quickly navigate
-        through that page.</p>
+        <p style="font-size: large">First of all, welcome to my website. My name is Shubham. I am currently pursuing
+            my masters in computer science at NJIT and have completed my bachelors in computer engineering. I also have
+            1+ years of IT support experience and did an internship as a software engineer. So far, I've created
+            projects using the Django Framework, but this time I got the opportunity to learn the Flask Framework for
+            this project and also got more ideas about Pylint, AAA Testing, OOPS Concepts, and SOLID principles.</p>
+        <p style="font-size: large">
+            This Web development work is done under the project of Web system development IS601 subject to get
+            hands-on experience and to get familiar with different technologies such as Docker, Git, Python-Flask,
+            CI/CD, and Bootstrap, including Pytest, Pylint, AAA Testing, OOPS Concepts, and SOLID principles. </p>
+        <p style="font-size: large">To quickly refresh on Pylint, AAA Testing, OOPS Concepts, and SOLID Principles,
+            click on the navigation bar and go through each technology. Also, you can click on any carousel to quickly
+            navigate through that page.</p>
 
     </div>
     <!-- content row end-->
