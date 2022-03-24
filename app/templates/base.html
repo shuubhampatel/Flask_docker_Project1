@@ -36,7 +36,8 @@
                             <a href="/" class="nav-link active navbarcustomfontcolor">Home</a>
                         </li>
                         <li class="nav-item ">
-                            <a href="/pylint" class="nav-link navbarcustomfontcolor centerfooter">Pylint & General definitions</a>
+                            <a href="/pylint" class="nav-link navbarcustomfontcolor centerfooter">Pylint & General
+                                definitions</a>
                         </li>
                         <li class="nav-item ">
                             <a href="/aaa" class="nav-link navbarcustomfontcolor">AAA testing</a>
@@ -57,15 +58,16 @@
         {% block content %}
         {% endblock %}
     </div>
-    <footer>
+    <footer class="navbarcustomcolor navbarcustomfontcolor">
         <div class=" row border">
-                <div class="centerfooter">Message: {{ mymessage }}</div>
+
             <div class="col"> Environment: {{ deployment_environment }}</div>
             <div class="col rightside">Copyright: {{ year }} </div>
-            </div>
-        </div>
-    </footer>
+            <div class="centerfooter">Message: {{ mymessage }}</div>
 
+        </div>
+
+    </footer>
 
 </div>
 <!-- Optional JavaScript; choose one of the two! -->
