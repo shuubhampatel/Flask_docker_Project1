@@ -6,16 +6,54 @@
         <h4>Lets read about OOPs concepts</h4>
         <div class="col-8">
             <p>Object-Oriented Programming (OOP) uses "objects" to model realworld objects.
-                        Object-Oriented Programming (OOP) consist of following some important concepts referred to as
-                        the OOPS
-                        concepts.
-                    <ul>
-                        <li>Encapsulation</li>
-                        <li>Inheritance</li>
-                        <li>Polymorphism</li>
-                        <li>Abstraction</li>
-                    </ul>
-                    </p>
+                Object-Oriented Programming (OOP) consist of following some important concepts referred to as
+                the OOPS concepts.
+            <h4> Lets understand this concept with the calculator program</h4>
+
+            <ul>
+                <li><b>Encapsulation</b>:In general terms Wrapping up of a data and functions into single unit is known
+                    as
+                    encapsulation.so here are the code example and we clearly see that data and functions are wrapped in
+                    class named as "calculation".<br>
+                    <pre style="margin-right: 0px">class Calculation:
+    """ calculation abstract base class"""
+
+    # pylint: disable=too-few-public-methods
+    def __init__(self, tuple_list: tuple):
+        """ constructor method"""
+        self.values = Calculation.convert_args_to_tuple_of_float(tuple_list)
+
+    @classmethod
+    def create(cls, tuple_list: tuple):
+        """ factory method"""
+        return cls(tuple_list)
+                    </pre>
+                    <br> Here method <code>create()</code> is wrapped in one unit so above is a one example of
+                    Encapsulation from calculator app.
+                </li>
+                <br>
+
+                <li><b>Inheritance</b>: Inheritance is the process/ Mechanism, by which class can acquire the
+                    properties and methods of another class. in simple words deriving a new class from an old
+                    class is called inheritance.Let's understand more with code so below is the code example that shows
+                    Inheritance in calculator app.
+
+                </li>
+                <br>
+
+                <li><b>Polymorphism</b>: Polymorphism allows a single name to be used for more than one related
+                    purpose.The concept of polymorphism is characterized by the idea of 'one interface, multiple
+                    methods'.
+                </li>
+                <br>
+
+                <li><b>Abstraction</b>: Abstraction is a concept in object-oriented programming that "shows"
+                    just the most important features while "hiding" the others. The basic goal of abstraction is
+                    to keep people aside from unneeded elements.
+                </li>
+            </ul>
+            </p>
+
         </div>
         <!-- col 1 end -->
         <!-- col 2 for images -->
@@ -23,21 +61,21 @@
         <div class="col">
             <!-- row 1 image1 -->
             <div class="row mb-3">
-                <img src="{{ url_for('static', filename='images/oops1.png') }}" class="img-fluid mb-5 border"
+                <img src="{{ url_for('static', filename='images/oops.png') }}" class="img-fluid mb-5 border"
                      alt="OOPs image 1">
             </div>
             <!-- row 1 image1 end -->
             <!-- row 2 image2 -->
 
             <div class="row mb-3">
-                <img src="{{ url_for('static', filename='images/oops2.png') }}" class="img-fluid mb-5 border"
+                <img src="{{ url_for('static', filename='images/oops1.png') }}" class="img-fluid mb-5 border"
                      alt="OOPs image 2">
             </div>
             <!-- row 2 image2 end -->
             <!-- row 3 image3 -->
 
             <div class="row mb-3">
-                <img src="{{ url_for('static', filename='images/oops3.png') }}" class="img-fluid mb-5 border"
+                <img src="{{ url_for('static', filename='images/oops2.png') }}" class="img-fluid mb-5 border"
                      alt="OOPs image 3">
             </div>
             <!-- row 3 image3 end -->
