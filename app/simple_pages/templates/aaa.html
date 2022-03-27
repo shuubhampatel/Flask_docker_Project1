@@ -7,111 +7,55 @@
             <!-- col 1 -->
             <h4>Lets read about AAA testing</h4>
             <div class="col-8">
-                <p>Docker is an open-source platform for building, deploying, and managing containerized apps. It
-                    enables
-                    programmers to bundle applications into containers, which are standardized executable components
-                    that
-                    integrate application source code with OS libraries and dependencies required to run that code in
-                    any
-                    environment. Basically, it solves the common and most important problem called <b>"This application
-                        Works on My Computer but Not Theirs."</b></p>
+                <br>Arrange, Act, Assert is the term for the three logical components that we should consider while
+                creating our tests.<br><br>
+                <p>- We set up our environment, i.e. everything we need to run our test code, in the <b>Arrange</b>
+                    section.
+                    This includes setting up objects, dependencies, and all of the test case's data.<br>
+                    - We run the test in the <b>Act</b> section by invoking the functions we built up in the previous
+                    stage.<br>- Finally, in the <b>Assert</b> section, we specify the test's pass criteria, which will
+                    fail it if they are
+                    not met, i.e. if the test's actual findings differ from what we expected.</p><br>
+                <p>from Image1 we easily tell how this 3 terms is used in test division method. First there is the test
+                    definition, docstring and arrangement.<br> In the middle line its a most important part is called
+                    Act.<br> Final line is called Assertions. </p>
+                <h5>Let's understand more about Arrange, Act, Assert by test code example image1 </h5>
                 <p>
+                    <code style="color: darkblue">&nbsp;&nbsp;def test_calculator_division_method():<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"""Testing the Calculator Division"""<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assert Calculator.divide(tuple_list()) == 0.5</code>
                 <ul>
-                    <li><b>containers: </b>a container is a running instance of an image, so by using that, we can run
-                        our
-                        image on any system and server. And it also automates the configuration and deployment of a
-                        given
-                        application very easily. So containers make deploying distributed apps easier, and they're
-                        becoming
-                        more popular as companies move to cloud-native development and hybrid multi-cloud setups.
+                    <li><b>Arrange:</b>As we discuss above in the Arrange part have definition, docsting and
+                        Arrangement. so here we gave our method/ test name + docsting.
                     </li>
-                    <li><b>Images: </b>images are nothing more than layers of software that are layered on top of each
-                        other. For example, in one layer is Ubuntu, and we have application code in the above layer, so
-                        this
-                        whole thing is combined into a layer that composes our final image that we use to deploy and
-                        create
-                        containers from it.
+                    <br>
+                    <li><b>Act:</b> This part is very important part here we gave instruction what this test do by
+                        invoking the functions we built up in the previous stage. so here in the above code from the
+                        given tuple list it will call function divide from calculator class and do division.
                     </li>
-                    <li><b>Docker Hub:</b>The Docker Hub is a cloud-based repository in which Docker users and partners
-                        can
-                        create, test, store, and distribute container images. A user can use Docker Hub to access
-                        public,
-                        open-source image repositories as well as create their own private repositories.</p>
+                    <br>
+                    <li><b>Assert:</b> Finally assertion will check the returned result with 0.5 to check our division
+                        method/ functionally in our app is working properly or not. If not then at the time of checking
+                        it will pass the message as this test is expecting result as a 0.5.
                     </li>
+                    </p>
                 </ul>
-                <h5>Docker Commands:</h5>
-                <ul>
-                    <li><b>docker images </b> : it will give total list of images in your system</li>
-                    <li><b>docker ps </b>: it will Give total number of running containers in your system</li>
-                    <li><b>docker stop containerID</b>: it will stop container of given containerID</li>
-                    <li><b>docker rm [containerID]</b>: This command is used to delete a stopped container</li>
-                    <li><b>docker pull [imageName/ repoPath] </b>:it will pull an image or repository from registry
-                    </li>
-                    <li><b>docker build -t docker_username/repo_name: tag . </b>: it will build docker image (below I
-                        explained in detail)
-                    </li>
-                    <li><b>docker run -dp PORT:PORT docker_username/repo_name: tag </b>: it will run you builded image
-                        on
-                        given port
-                    </li>
-                    <li><b>docker push docker_username/repo_name: tag </b>: it will push image to given docker repo.
-                    </li>
-                    <li><b> docker commit</b>: it will use to commit file changes into new image.</li>
-                    <li><b> docker system prune -a </b>: Remove all unused containers, networks, images (both dangling
-                        and
-                        unreferenced), and optionally, volumes.
-                    </li>
-                    <li><b>docker login </b>: login to docker cloud
-                    </li>
-                </ul>
-                </br>
-                <h5>How to Start the Project:</h5>
-                <p>To start the project, we have to create a file called Dockerfile (explanation is below how to and
-                    what to
-                    include in this file), a Docker compose file, and requirement files to add package layer in our
-                    image in
-                    the root directory and then we have run the docker file by command <b> docker-compose</b> up to
-                    check
-                    and verify
-                    our image work locally on localhost and if everything looks good then we can create one repo to
-                    docker
-                    hub and we can build image to push it docker hub to do so following are the command.<br><br>To build
-                    image
-                    we can type this command <b>docker build -t docker_username/repo_name: tag . (Note there is a (dot)
-                        at
-                        the end </b>
-                    Because it tells that docker should look for the docker file in current directory.)
-                    now your docker image is build and ready to push it to your docker hub repo.
-                    before pushing do<b> docker run -dp 80:5000 docker_username/repo_name: tag </b>run that just built
-                    image
-                    so
-                    after that it will show your app in localhost:5000 because in docker file you mentioned 5000 port as
-                    host and port 80 for docker container.Now you can push it to docker hub by following command:<br>
-                    <b>docker push docker_username/repo_name: tag</b><br><br>
-                    Now if your image is pushed in public repo then anyone can pull it and if you want to modify then do
-                    it
-                    and apply docker commit
-                    command and follow the same steps to push changed image to docker hub and give new tag to image
-                    before
-                    pushing it.
+                <br>
+
+                <h5>Why testing is important? :</h5>
+                <p>A test is a procedure that exercises a behavior to determine if the behavior functions correctly.
+                    There are several different kinds of tests, like unit tests, integration tests, or end-to-end tests,
+                    but all functional tests do the same basic thing: they try something and report PASS or FAIL.
+                    <br><br>
+                    Testing provides an empirical feedback loop for development. That’s how testing keeps us safe.
+                    With tests, we know when things break. Without tests, coding can be dangerous. We don’t want to
+                    deploy big ol’ bugs! In big applications without tests, developers have to invest a lot of time in
+                    finding the bug, but with the help of unit tests,we can easily identify that the test is expecting
+                    this output and our code is giving a different result, so the developer can directly focus on that
+                    part directly.
                 </p>
                 </br>
 
-                <h5>About dockerfile:</h5>
-                <p>Dockerfile is a simple text file that consists of instructions to build Docker images.The specific
-                    commands you can use in a dockerfile are:
-                <ul>
-                    - FROM - Creates a layer from the ubuntu:18.04<br>
-                    - PULL - Adds files from your Docker repository<br>
-                    - RUN - Builds your container<br>
-                    - CMD - Specifies what command to run within the container<br>
-                </ul>
-                <p>Mentioned below is an example of the dockerfile with the important commands:</p>
-                <p> FROM ubuntu:18.04<br>
-                    PULL. /file<br>
-                    RUN make /file<br>
-                    CMD python /file/file.py<br>
-                </p>
 
             </div>
             <!-- col 1 end -->
@@ -138,6 +82,30 @@
                          alt="AAA Image 3">
                 </div>
                 <!-- row 3 image3 end -->
+
+                <!-- row 4 for refer -->
+                <div class="row mb-3">
+                    <a href="https://jamescooke.info/arrange-act-assert-pattern-for-python-developers.html"
+                       class="img-fluid mb-5 border"
+                       alt="pylint reference">Reference for AAA testing</a>
+                </div>
+                <!-- row 4 for refer end -->
+
+                <!-- row 5 for refer -->
+                <div class="row mb-3">
+                    <a href="https://jaguhiremath62.medium.com/arrange-act-and-assert-aaa-pattern-in-unit-testing-b2d261aaef6a"
+                       class="img-fluid mb-5 border"
+                       alt="pylint reference">Reference for Arrange, Act and Assert (AAA) Pattern</a>
+                </div>
+                <!-- row 5 for refer end -->
+
+                <!-- row 6 for refer -->
+                <div class="row mb-3">
+                    <a href="https://automationpanda.com/2020/07/07/arrange-act-assert-a-pattern-for-writing-good-tests/"
+                       class="img-fluid mb-5 border"
+                       alt="pylint reference">Reference for How to write good test & importance of Test</a>
+                </div>
+                <!-- row 6 for refer end -->
 
             </div>
             <!-- col 2 for images end-->
