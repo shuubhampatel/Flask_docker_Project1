@@ -21,20 +21,23 @@
                     Act.<br> Final line is called Assertions. </p>
                 <h5>Let's understand more about Arrange, Act, Assert by test code example image1 </h5>
                 <p>
-                    <code style="color: darkblue">&nbsp;&nbsp;def test_calculator_division_method():<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"""Testing the Calculator Division"""<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assert Calculator.divide(tuple_list()) == 0.5</code>
+                <pre>def test_calculation_division_get_result_method():
+    """Testing the Calculator Division"""
+    tuple_list = (1, 2) # <--- Arrange
+    calculation = Division.create(tuple_list) # <--- Act
+    assert calculation.get_result() == 0.5 # <--- Assert</pre>
                 <ul>
                     <li><b>Arrange:</b>As we discuss above in the Arrange part have definition, docsting and
-                        Arrangement. so here we gave our method/ test name + docsting.
+                        Arrangement. so here we setting up our as Arrange we created tuple_list.
                     </li>
                     <br>
                     <li><b>Act:</b> This part is very important part here we gave instruction what this test do by
                         invoking the functions we built up in the previous stage. so here in the above code from the
-                        given tuple list it will call function divide from calculator class and do division.
+                        given tuple list it will call method <code>create()</code> from class Division and do division.
                     </li>
                     <br>
-                    <li><b>Assert:</b> Finally assertion will check the returned result with 0.5 to check our division
+                    <li><b>Assert:</b> Finally assertion will check the returned result from <code>get_result()</code>
+                        method with 0.5 to check our division
                         method/ functionally in our app is working properly or not. If not then at the time of checking
                         it will pass the message as this test is expecting result as a 0.5.
                     </li>

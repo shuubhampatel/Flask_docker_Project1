@@ -12,10 +12,11 @@
 
             <ul>
                 <li><b>Encapsulation</b>:In general terms Wrapping up of a data and functions into single unit is known
-                    as
-                    encapsulation.so here are the code example and we clearly see that data and functions are wrapped in
-                    class named as "calculation".<br>
-                    <pre style="margin-right: 0px">class Calculation:
+                    as encapsulation.Here are the code example and we can clearly see that data and functions are
+                    wrapped in
+                    class named as "calculation". so now <code>create()</code> is no longer call as a functions becasue
+                    is not independent now its wrapped in a class so it becomes method now.<br>
+                    <pre>class Calculation:
     """ calculation abstract base class"""
 
     # pylint: disable=too-few-public-methods
@@ -36,14 +37,88 @@
                 <li><b>Inheritance</b>: Inheritance is the process/ Mechanism, by which class can acquire the
                     properties and methods of another class. in simple words deriving a new class from an old
                     class is called inheritance.Let's understand more with code so below is the code example that shows
-                    Inheritance in calculator app.
+                    Inheritance in calculator app.<br>
+                    <pre style="height: 400px">class Calculation:
+    """ calculation abstract base class"""
 
+    # pylint: disable=too-few-public-methods
+    def __init__(self, tuple_list: tuple):
+        """ constructor method"""
+        self.values = Calculation.convert_args_to_tuple_of_float(tuple_list)
+
+    @classmethod
+    def create(cls, tuple_list: tuple):
+        """ factory method"""
+        return cls(tuple_list)
+
+    @staticmethod
+    def convert_args_to_tuple_of_float(tuple_list):
+        """ standardize values to list of floats"""
+        list_values_float = []
+        for item in tuple_list:
+            list_values_float.append(float(item))
+        return tuple(list_values_float)
+
+
+class Division(Calculation):
+    """Division calculation object"""
+
+    def get_result(self):
+        """get the Division results"""
+        result = 1.0
+        for value in self.values:
+            result = Div.divide(result, value)
+                        return result</pre>
+                    <br> Above code shows <code>Division</code> class is inherited from class
+                    <code>Calculation</code> that means new Division class can have access to all the methods and data
+                    from Calculation class. Here we are currently using values from tuples actually those values
+                    are now converted to List from <code>__init__</code> method
+                    of parent class<code>Calculation</code>(because before performing any operations we need to convert
+                    to List data structure because we can't modify values in tuples). So that's how Inheritance works in
+                    calculator app.
                 </li>
                 <br>
 
                 <li><b>Polymorphism</b>: Polymorphism allows a single name to be used for more than one related
                     purpose.The concept of polymorphism is characterized by the idea of 'one interface, multiple
-                    methods'.
+                    methods'. Let's understand with example from calculator app. so below is a code from calculation
+                    namesapce and according to code it have two classes Division and Multiplication with same method
+                    name
+                    <code>get_result()</code> but both will work differently. so this is called Polymorphism.
+                    and we can call it by Instantiating object of Division or Multiplication class.
+                    <pre style="height: 400px">class Division(Calculation):
+    """Division calculation object"""
+
+    def get_result(self):
+        """get the Division results"""
+        result = 1.0
+        for value in self.values:
+            result = Div.divide(result, value)
+        return result
+
+
+class Multiplication(Calculation):
+    """multiplication calculation object"""
+
+    def get_result(self):
+        """get the multiplication results"""
+        result = 1.0
+        for value in self.values:
+            result = Mult.multiply(result, value)
+        return result</pre>
+                    <br>
+                    So in the below code we are calling the method <code>get_result()</code> from Multiplication class
+                    in the Calculator class by creating object "calculation". so thats how Polymorphism works in this
+                    calculator app.<br>
+                    <pre>class Calculator:
+    """ This is the default result property"""
+
+    @staticmethod
+    def multiply(tuple_list):
+        """ This is the multiply method"""
+        calculation = Multiplication.create(tuple_list)
+        return calculation.get_result()
+</pre>
                 </li>
                 <br>
 
