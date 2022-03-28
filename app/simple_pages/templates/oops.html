@@ -38,7 +38,7 @@
                     properties and methods of another class. in simple words deriving a new class from an old
                     class is called inheritance.Let's understand more with code so below is the code example that shows
                     Inheritance in calculator app.<br>
-                    <pre style="height: 400px">class Calculation:
+                    <pre style="height: 300px">class Calculation:
     """ calculation abstract base class"""
 
     # pylint: disable=too-few-public-methods
@@ -86,7 +86,7 @@ class Division(Calculation):
                     name
                     <code>get_result()</code> but both will work differently. so this is called Polymorphism.
                     and we can call it by Instantiating object of Division or Multiplication class.
-                    <pre style="height: 400px">class Division(Calculation):
+                    <pre style="height: 300px">class Division(Calculation):
     """Division calculation object"""
 
     def get_result(self):
@@ -124,7 +124,94 @@ class Multiplication(Calculation):
 
                 <li><b>Abstraction</b>: Abstraction is a concept in object-oriented programming that "shows"
                     just the most important features while "hiding" the others. The basic goal of abstraction is
-                    to keep people aside from unneeded elements.
+                    to keep people aside from unneeded elements. Below code gives example of Abstraction by "hiding"
+                    features from calculations class. so in the hightlighted line you can see that we are importing
+                    methods <code>Addition, Subtraction, Multiplication, Division</code> from calculations class that
+                    means we shows just <code>divide, add, subtract, multiply</code> methods and we are hiding hows the
+                    calculation works.
+                    <pre style="height: 300px">""" This is the Calculator Class"""
+<mark>from calculator.calculations import Addition, Subtraction, Multiplication, Division</mark>
+
+
+class Calculator:
+    """ This is the default result property"""
+
+    @staticmethod
+    def divide(tuple_list):
+        """ This is the divide method"""
+        calculation = Division.create(tuple_list)
+        return calculation.get_result()
+
+    @staticmethod
+    def add(tuple_list):
+        """ This is the add method"""
+        # Call the static method add to return the sum and set it to the calculator result property
+        calculation = Addition.create(tuple_list)
+        return calculation.get_result()
+
+    @staticmethod
+    def subtract(tuple_list):
+        """ This is the subtract method"""
+        calculation = Subtraction.create(tuple_list)
+        return calculation.get_result()
+
+    @staticmethod
+    def multiply(tuple_list):
+        """ This is the multiply method"""
+        calculation = Multiplication.create(tuple_list)
+        return calculation.get_result()
+</pre>
+
+                    --------------------------------------------------------------------------------------------<br>So
+                    below code is from calculations class and here also we are using Abstraction by hiding all
+                    operations by importing methods in Calculations class and that's how Abstraction used in Calculator
+                    app.<br>
+                    --------------------------------------------------------------------------------------------
+
+                    <pre style="height: 300px"><mark>from calculator.operations import Addition as Add, Subtraction as Sub, Multiplication as Mult, Division as Div</mark>
+
+class Division(Calculation):
+    """Division calculation object"""
+
+    def get_result(self):
+        """get the Division results"""
+        result = 1.0
+        for value in self.values:
+            result = Div.divide(result, value)
+        return result
+
+
+class Multiplication(Calculation):
+    """multiplication calculation object"""
+
+    def get_result(self):
+        """get the multiplication results"""
+        result = 1.0
+        for value in self.values:
+            result = Mult.multiply(result, value)
+        return result
+
+
+class Addition(Calculation):
+    """ calculation addition class"""
+
+    def get_result(self):
+        """get the addition results"""
+        sum_of_values = 0.0
+        for value in self.values:
+            sum_of_values = Add.add(value, sum_of_values)
+        return sum_of_values
+
+
+class Subtraction(Calculation):
+    """subtraction calculation object"""
+
+    def get_result(self):
+        """get the subtraction results"""
+        difference_of_values = 0.0
+        for value in self.values:
+            difference_of_values = Sub.subtract(difference_of_values, value)
+        return difference_of_values</pre>
                 </li>
             </ul>
             </p>
@@ -154,12 +241,40 @@ class Multiplication(Calculation):
                      alt="OOPs image 3">
             </div>
             <!-- row 3 image3 end -->
-            <!-- row 3 image4  -->
+            <!-- row 4 image4  -->
             <div class="row mb-3">
-                <img src="{{ url_for('static', filename='images/oops4.png') }}" class="img-fluid mb-5 border"
+                <img src="{{ url_for('static', filename='images/oops3.png') }}" class="img-fluid mb-5 border"
                      alt="OOPs image 4">
             </div>
-            <!-- row 3 image4 end -->
+            <!-- row 4 image4 end -->
+
+            <!-- row 5 image5  -->
+            <div class="row mb-3">
+                <img src="{{ url_for('static', filename='images/oops4.png') }}" class="img-fluid mb-5 border"
+                     alt="OOPs image 5">
+            </div>
+            <!-- row 5 image5 end -->
+
+            <!-- row 6 image6  -->
+            <div class="row mb-3">
+                <img src="{{ url_for('static', filename='images/oops5.png') }}" class="img-fluid mb-5 border"
+                     alt="OOPs image 6">
+            </div>
+            <!-- row 6 image6 end -->
+
+            <!-- row 7 for refer -->
+            <div class="row mb-3">
+                <a href="https://www.geeksforgeeks.org/python-oops-concepts/" class="img-fluid mb-5 border"
+                   alt="pylint reference">Reference for Python OOPs Concepts</a>
+            </div>
+            <!-- row 7 for refer end -->
+
+            <!-- row 8 for refer -->
+            <div class="row mb-3">
+                <a href="https://www.programiz.com/python-programming/object-oriented-programming" class="img-fluid mb-5 border"
+                   alt="pylint reference">Reference for Python Object Oriented Programming</a>
+            </div>
+            <!-- row 8 for refer end -->
         </div>
         <!-- col 2 for images end-->
 
