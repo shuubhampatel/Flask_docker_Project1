@@ -86,10 +86,28 @@ class Subtraction:
                 <li><b>L</b>iskov Substitution: A sub-class must be able to take the place of its super-class. When
                     extending a class, we should keep in mind that to pass subclass objects in place of parent
                     class objects without disrupting client code. The goal of this principle is to ensure that a
-                    sub-class can correctly take the place of its super-class.
+                    sub-class can correctly take the place of its super-class.<br>
                 </li>
-                <li><b>I</b>nterface Segregation: </li>
-                <li><b>D</b>ependency Inversion</li>
+                <li><b>I</b>nterface Segregation: Make fine grained interfaces that are client specific Clients should
+                    not be forced to depend upon interfaces or methods that they do not use. in our calculator app we
+                    have class Multiplication and that class in not depended on any other class so basically this
+                    principle is kind of same as Single-responsibility but here insted of method here interface do one
+                    and only one thing.
+                    <pre class="border-top border-bottom">class Multiplication:
+    """ This is the Multiplication class"""
+
+    @staticmethod
+    def multiply(value_1, value_2):
+        """ This is the add method"""
+        return value_1 * value_2</pre>
+                </li>
+                <li><b>D</b>ependency Inversion: Entities must depend on abstractions, not on concretions. That means
+                    the high-level module must not depend on the low-level module, but they should depend on
+                    abstractions. according to our calculator app operations module is the low-level module because it
+                    will perform operations after important task such as object creation, converting tuples to list
+                    because thease are the high level modules so according to dependency Inversion Principle operations
+                    module is depend upon calculations/ high level module.
+                </li>
             </ul>
             </p>
 
@@ -164,13 +182,56 @@ class Subtraction:
             </div>
             <!-- row 3 image3 end -->
 
-            <!-- row 4 for refer -->
+            <!-- row 4 image4 -->
+
+            <div class="row mb-3">
+                <img src="{{ url_for('static', filename='images/solid4.png') }}"
+                     class="img-fluid mb-5 border border-dark"
+                     alt="SOLID Image 4">
+            </div>
+            <!-- row 4 image4 end -->
+
+            <!-- row 5 image5 -->
+
+            <div class="row mb-3">
+                <img src="{{ url_for('static', filename='images/solid5.png') }}"
+                     class="img-fluid mb-5 border border-dark"
+                     alt="SOLID Image 5">
+            </div>
+            <!-- row 5 image5 end -->
+
+            <!-- row 6 image6 -->
+
+            <div class="row mb-3">
+                <img src="{{ url_for('static', filename='images/solid6.png') }}"
+                     class="img-fluid mb-5 border border-dark"
+                     alt="SOLID Image 6">
+            </div>
+            <!-- row 6 image6 end -->
+
+            <!-- row 7 for refer -->
             <div class="row mb-3">
                 <a href="https://www.digitalocean.com/community/conceptual_articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design"
                    class="img-fluid mb-5 border border-dark"
                    alt="pylint reference">Reference for Python SOLID Principles</a>
             </div>
-            <!-- row 4 for refer end -->
+            <!-- row 7 for refer end -->
+
+            <!-- row 8 for refer -->
+            <div class="row mb-3">
+                <a href="https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/"
+                   class="img-fluid mb-5 border border-dark"
+                   alt="pylint reference">Reference for Python SOLID Principles 2</a>
+            </div>
+            <!-- row 8 for refer end -->
+
+            <!-- row 9 for refer -->
+            <div class="row mb-3">
+                <a href="https://www.educative.io/blog/solid-principles-oop-c-sharp"
+                   class="img-fluid mb-5 border border-dark"
+                   alt="pylint reference">Reference for Python SOLID Principles 3</a>
+            </div>
+            <!-- row 9 for refer end -->
 
         </div>
         <!-- col 2 for images end-->
