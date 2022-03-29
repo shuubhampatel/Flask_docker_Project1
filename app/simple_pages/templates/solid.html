@@ -83,11 +83,58 @@ class Subtraction:
             result = Div.divide(result, value)
         return result</pre>
                 </li>
-                <li><b>L</b>iskov Substitution</li>
-                <li><b>I</b>nterface Segregation</li>
+                <li><b>L</b>iskov Substitution: A sub-class must be able to take the place of its super-class. When
+                    extending a class, we should keep in mind that to pass subclass objects in place of parent
+                    class objects without disrupting client code. The goal of this principle is to ensure that a
+                    sub-class can correctly take the place of its super-class.
+                </li>
+                <li><b>I</b>nterface Segregation: </li>
                 <li><b>D</b>ependency Inversion</li>
             </ul>
             </p>
+
+            <h5>Design Patterns:</h5> Design patterns are common solutions to challenging issues in
+            software development. They're similar to pre-made blueprints that we can use to fix a repeated
+            design
+            issue in the code.<br>It have many benefits that overcome problem in software design. it defines a
+            common langauge that helps team to communicate more efficiently.<br>
+            Patterns are classified in 3 groups by their intent.
+            <ul>
+                <li>Creational patterns: These patterns provide various object creation mechanisms, which increase
+                    flexibility and reuse of existing code.
+                </li>
+                <li>Structural patterns: These patterns explain how to assemble objects and classes into larger
+                    structures while keeping these structures flexible and efficient.
+                </li>
+                <li>Behavioral patterns: These patterns are concerned with algorithms and the assignment of
+                    responsibilities between objects.
+                </li>
+                <h5>Factory method:</h5>
+                <pre class="border-bottom border-top">class Calculation:
+    """ calculation abstract base class"""
+
+    # pylint: disable=too-few-public-methods
+    def __init__(self, tuple_list: tuple):
+        """ constructor method"""
+        self.values = Calculation.convert_args_to_tuple_of_float(tuple_list)
+
+    <mark>@classmethod</mark>
+    <mark>def create(cls, tuple_list: tuple):</mark>
+        <mark>""" factory method"""</mark>
+        <mark>return cls(tuple_list)</mark>
+</pre>
+                Here above <code>create()</code> method called as a factory method and to use of this function to return
+                a instance of class the you are referring to and the example of that is given below where instance is
+                passes to variable name calculation for calling get_result() method to get result of calculation.<br>
+                <pre class="border-bottom border-top"> class Calculator:
+    """ This is the default result property"""
+
+    @staticmethod
+    def divide(tuple_list):
+        """ This is the divide method"""
+        <mark>calculation = Division.create(tuple_list)</mark>
+        <mark>return calculation.get_result()</mark></pre>
+            </ul>
         </div>
         <!-- col 1 end -->
         <!-- col 2 for images -->

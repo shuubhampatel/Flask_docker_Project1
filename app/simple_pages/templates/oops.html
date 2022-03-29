@@ -12,23 +12,21 @@
 
             <ul>
                 <li><b>Encapsulation</b>:In general terms Wrapping up of a data and functions into single unit is known
-                    as encapsulation.Here are the code example and we can clearly see that data and functions are
-                    wrapped in
-                    class named as "calculation". so now <code>create()</code> is no longer call as a functions becasue
-                    is not independent now its wrapped in a class so it becomes method now.<br>
-                    <pre class="border-top border-bottom">class Calculation:
-    """ calculation abstract base class"""
+                    as encapsulation.Here are the code example and we can clearly see that when we create Instance of
+                    class Division it will bind and store all the data and functionally to the calculation variable to
+                    perform get_result() method.
+                    <br>
+                    <pre class="border-top border-bottom">from calculator.calculations import Addition, Subtraction, Multiplication, Division
 
-    # pylint: disable=too-few-public-methods
-    def __init__(self, tuple_list: tuple):
-        """ constructor method"""
-        self.values = Calculation.convert_args_to_tuple_of_float(tuple_list)
 
-    @classmethod
-    def create(cls, tuple_list: tuple):
-        """ factory method"""
-        return cls(tuple_list)
-                    </pre>
+class Calculator:
+    """ This is the default result property"""
+
+    @staticmethod
+    def divide(tuple_list):
+        """ This is the divide method"""
+        <mark>calculation = Division.create(tuple_list)</mark>
+        return calculation.get_result()</pre>
                     <br> Here method <code>create()</code> is wrapped in one unit so above is a one example of
                     Encapsulation from calculator app.
                 </li>
@@ -228,34 +226,39 @@ class Subtraction(Calculation):
             <!-- row 2 image2 -->
 
             <div class="row mb-3">
-                <img src="{{ url_for('static', filename='images/oops1.png') }}" class="img-fluid mb-5 border border-dark"
+                <img src="{{ url_for('static', filename='images/oops1.png') }}"
+                     class="img-fluid mb-5 border border-dark"
                      alt="OOPs image 2">
             </div>
             <!-- row 2 image2 end -->
             <!-- row 3 image3 -->
 
             <div class="row mb-3">
-                <img src="{{ url_for('static', filename='images/oops2.png') }}" class="img-fluid mb-5 border border-dark"
+                <img src="{{ url_for('static', filename='images/oops2.png') }}"
+                     class="img-fluid mb-5 border border-dark"
                      alt="OOPs image 3">
             </div>
             <!-- row 3 image3 end -->
             <!-- row 4 image4  -->
             <div class="row mb-3">
-                <img src="{{ url_for('static', filename='images/oops3.png') }}" class="img-fluid mb-5 border border-dark"
+                <img src="{{ url_for('static', filename='images/oops3.png') }}"
+                     class="img-fluid mb-5 border border-dark"
                      alt="OOPs image 4">
             </div>
             <!-- row 4 image4 end -->
 
             <!-- row 5 image5  -->
             <div class="row mb-3">
-                <img src="{{ url_for('static', filename='images/oops4.png') }}" class="img-fluid mb-5 border border-dark"
+                <img src="{{ url_for('static', filename='images/oops4.png') }}"
+                     class="img-fluid mb-5 border border-dark"
                      alt="OOPs image 5">
             </div>
             <!-- row 5 image5 end -->
 
             <!-- row 6 image6  -->
             <div class="row mb-3">
-                <img src="{{ url_for('static', filename='images/oops5.png') }}" class="img-fluid mb-5 border border-dark"
+                <img src="{{ url_for('static', filename='images/oops5.png') }}"
+                     class="img-fluid mb-5 border border-dark"
                      alt="OOPs image 6">
             </div>
             <!-- row 6 image6 end -->
