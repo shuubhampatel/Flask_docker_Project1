@@ -6,7 +6,7 @@ def test_request_main_menu_links(client):
     response = client.get("/")
     assert response.status_code == 200
     assert b'<a href="/pylint" class="nav-link navbarcustomfontcolor cent' in response.data
-    assert b'<a href="/aaa" class="nav-link navbarcustomfontcolor">AAA testing</a>' in response.data
+    assert b'<a href="/aaa" class="nav-link navbarcustomfontcolor">AAA Testing</a>' in response.data
     assert b'<a href="/oops" class="nav-link navbarcustomfontcolor">OOPs</a>' in response.data
     assert b'<a href="/solid" class="nav-link navbarcustomfontcolor">SOLID</a>' in response.data
     assert b'<a class="dropdown-item" href="/git">Git</a>' in response.data
