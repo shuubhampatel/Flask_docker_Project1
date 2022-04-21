@@ -31,38 +31,8 @@
                         <a class="navbar-brand navbarcustomfontcolor" href="/">
                             <h3><i class="bi bi-house-door-fill"></i>IS601 Project2</h3></a>
                     </div>
-                        <ul class="navbar-nav ms-auto">
-                            <li class="nav-item ">
-                                <a href="/" class="nav-link active navbarcustomfontcolor">Home</a>
-                            </li>
-                            <li class="nav-item ">
-                                <a href="/pylint" class="nav-link navbarcustomfontcolor centerfooter">Pylint & General
-                                    definitions</a>
-                            </li>
-                            <li class="nav-item ">
-                                <a href="/aaa" class="nav-link navbarcustomfontcolor">AAA Testing</a>
-                            </li>
-                            <li class="nav-item ">
-                                <a href="/oops" class="nav-link navbarcustomfontcolor">OOPs</a>
-                            </li>
-                            <li class="nav-item ">
-                                <a href="/solid" class="nav-link navbarcustomfontcolor">SOLID</a>
-                            </li>
-                            <!-- Dropdown menu -->
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle navbarcustomfontcolor " href="#" id="navbarDropdown" role="button"
-                                   data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Project 1
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="/git">Git</a>
-                                    <a class="dropdown-item" href="/docker">Docker</a>
-                                    <a class="dropdown-item" href="flask">Python/ Flask</a>
-                                    <a class="dropdown-item" href="cicd">CI/ CD</a>
-                                </div>
-                            </li>
-                            <!-- Dropdown menu end -->
-                        </ul>
+                    {% block navbaritems %}
+                    {% endblock %}
                 </div>
             </nav>
             <!-- end of navbar -->
