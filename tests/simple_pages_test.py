@@ -80,3 +80,22 @@ def test_cicd_page(client):
     response = client.get("/cicd")
     assert response.status_code == 200
     assert b"Lets read about CI/CD" in response.data
+
+
+def test_about_page(client):
+    """This makes the ci/cd page"""
+    response = client.get("/about")
+    assert response.status_code == 200
+    assert b"Introduction about My Self" in response.data
+
+
+def test_register_page(client):
+    """This makes the ci/cd page"""
+    response = client.get("/register")
+    assert response.status_code == 200
+
+
+def test_login_page(client):
+    """This makes the ci/cd page"""
+    response = client.get("/register")
+    assert response.status_code == 200
