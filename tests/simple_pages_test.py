@@ -5,14 +5,18 @@ def test_request_main_menu_links(client):
     """This makes the index page"""
     response = client.get("/")
     assert response.status_code == 200
-    assert b'<a href="/pylint" class="nav-link navbarcustomfontcolor cent' in response.data
-    assert b'<a href="/aaa" class="nav-link navbarcustomfontcolor">AAA Testing</a>' in response.data
-    assert b'<a href="/oops" class="nav-link navbarcustomfontcolor">OOPs</a>' in response.data
-    assert b'<a href="/solid" class="nav-link navbarcustomfontcolor">SOLID</a>' in response.data
     assert b'<a class="dropdown-item" href="/git">Git</a>' in response.data
     assert b'<a class="dropdown-item" href="/docker">Docker</a>' in response.data
     assert b'<a class="dropdown-item" href="flask">Python/ Flask</a>' in response.data
     assert b'<a class="dropdown-item" href="cicd">CI/ CD</a>' in response.data
+    assert b'<a class="dropdown-item" href="/pylint">Pylint & General definitions</a>' in response.data
+    assert b'<a class="dropdown-item" href="/aaa">AAA Testing</a>' in response.data
+    assert b'<a class="dropdown-item" href="/oops">OOPs</a>' in response.data
+    assert b'<a class="dropdown-item" href="/solid">SOLID</a>' in response.data
+    assert b'<ul class="nav-item active"><a href="/" class="nav-link' in response.data
+    assert b'<ul class="nav-item "><a href="/about" class="nav-link' in response.data
+    assert b'<ul class="nav-item "><a href="/Register" class="nav-link' in response.data
+    assert b'<ul class="nav-item "><a href="/login" class="nav-link' in response.data
 
 
 def test_request_home(client):

@@ -8,3 +8,4 @@ __pycache__
 .bash_history
 db
 .DS_Store
+logs
