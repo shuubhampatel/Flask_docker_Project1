@@ -13,7 +13,7 @@ def test_request_main_menu_links(client):
     assert b'<a class="dropdown-item" href="/aaa">AAA Testing</a>' in response.data
     assert b'<a class="dropdown-item" href="/oops">OOPs</a>' in response.data
     assert b'<a class="dropdown-item" href="/solid">SOLID</a>' in response.data
-    assert b'<ul class="nav-item active"><a href="/" class="nav-link' in response.data
+    assert b'<ul class="nav-item "><a href="/" class="nav-link' in response.data
     assert b'<ul class="nav-item "><a href="/about" class="nav-link' in response.data
     assert b'<ul class="nav-item "><a href="/Register" class="nav-link' in response.data
     assert b'<ul class="nav-item "><a href="/login" class="nav-link' in response.data
