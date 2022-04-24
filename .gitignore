@@ -6,6 +6,9 @@
 __pycache__
 .coverage
 .bash_history
-db
 .DS_Store
 logs
+.env
+logs
+uploads
+database

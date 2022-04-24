@@ -20,10 +20,20 @@
     <ul class="nav-item "><a href="/" class="nav-link navbarcustomfontcolor">Home</a></ul>
     <ul class="nav-item "><a href="/about" class="nav-link navbarcustomfontcolor">About</a></ul>
     <ul class="nav-item "><a href="/Register" class="nav-link navbarcustomfontcolor">Register</a></ul>
-    <ul class="nav-item"><a href="/login" class="nav-link active navbarcustomfontcolor" style="background-color: darkblue">Login</a></ul>
+    <ul class="nav-item"><a href="/login" class="nav-link active navbarcustomfontcolor"
+                            style="background-color: darkblue">Login</a></ul>
 
     </div>
 {% endblock %}
 {% block content %}
-Login Page
+    Login Page
+    {% from 'bootstrap5/form.html' import render_form, render_field, render_form_row %}
+    <div class="row mt-5">
+
+        <div class="col-4 border border-1 border-dark mx-auto p-4">
+            <h2>Login</h2>
+            {{ render_form(form) }}
+        </div>
+    </div>
+
 {% endblock %}

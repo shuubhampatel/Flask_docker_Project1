@@ -14,7 +14,7 @@
     {% block head %}
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
 
-        <title>{% block title %}{% endblock %}Welcome to IS601 Project2{{ name }} </title>
+        <title>{% block title %}{% endblock %}IS601 Project3{{ name }} </title>
     {% endblock %}
 
 </head>
@@ -29,7 +29,7 @@
                 <div class="container">
                     <div class="header-item mt-n1 mb-n1 d-md-flex">
                         <a class="navbar-brand navbarcustomfontcolor" href="/">
-                            <h3><i class="bi bi-house-door-fill"></i>IS601 Project2</h3></a>
+                            <h3><i class="bi bi-house-door-fill"></i>IS601 Project 3</h3></a>
                     </div>
                     {% block navbaritems %}
                     {% endblock %}
@@ -42,7 +42,7 @@
         {% block content %}
         {% endblock %}
     </div>
-    <footer class="navbarcustomcolor navbarcustomfontcolor">
+    <footer class="navbarcustomcolor navbarcustomfontcolor fixed-bottom">
         <div class=" row border">
 
             <div class="col"> Environment: {{ deployment_environment }}</div>

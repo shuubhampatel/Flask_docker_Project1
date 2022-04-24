@@ -23,7 +23,7 @@ def test_request_home(client):
     """This makes the index page"""
     response = client.get("/")
     assert response.status_code == 200
-    assert b"IS601 Project2" in response.data
+    assert b"IS601 Project 3" in response.data
 
 
 def test_pylint_page(client):
@@ -93,9 +93,11 @@ def test_register_page(client):
     """This makes the ci/cd page"""
     response = client.get("/register")
     assert response.status_code == 200
+    assert b"Registration Page" in response.data
 
 
 def test_login_page(client):
     """This makes the ci/cd page"""
-    response = client.get("/register")
+    response = client.get("/login")
     assert response.status_code == 200
+    assert b"Login Page" in response.data
