@@ -9,6 +9,5 @@ __pycache__
 .DS_Store
 logs
 .env
-logs
 uploads
 database

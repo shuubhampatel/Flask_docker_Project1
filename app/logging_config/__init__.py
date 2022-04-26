@@ -9,15 +9,6 @@ from app.logging_config.log_formatters import RequestFormatter
 log_con = flask.Blueprint('log_con', __name__)
 
 
-@log_con.before_app_request
-def before_request_logging():
-    current_app.logger.info("Before Request")
-    log = logging.getLogger("myApp")
-    log.info("My App Logger")
-    log = logging.getLogger("myDebug")
-    log.debug("Debug Logger Message(before_app_request)")
-
-
 @log_con.after_app_request
 def after_request_logging(response):
     if request.path == '/favicon.ico':
@@ -30,8 +21,8 @@ def after_request_logging(response):
 
     log = logging.getLogger("myApp")
     log.info("My App Logger")
-    log = logging.getLogger("myDebug")
-    log.debug("Debug Logger Message(after_app_request)")
+    log = logging.getLogger("csvlog")
+    log.debug("Debug Logger Message")
     return response
 
 
@@ -40,8 +31,8 @@ def configure_logging():
     logging.config.dictConfig(LOGGING_CONFIG)
     log = logging.getLogger("myApp")
     log.info("My App Logger")
-    log = logging.getLogger("myDebug")
-    log.debug("Debug Logger Message(before_app_first_request)")
+    log = logging.getLogger("csvlog")
+    log.debug("CSV file upload Logger Message(first_request)")
 
 
 LOGGING_CONFIG = {
@@ -56,9 +47,9 @@ LOGGING_CONFIG = {
             'format': '[%(asctime)s] [%(process)d] %(remote_addr)s requested %(url)s'
                       '%(levelname)s in %(module)s: %(message)s'
         },
-        'DebugFormatter': {
+        'CSVFormatter': {
             '()': 'app.logging_config.log_formatters.RequestFormatter',
-            'format': '%(levelname)s : %(message)s'
+            'format': '%(filename)s uploaded by : %(host)s'
         }
     },
     'handlers': {
@@ -75,10 +66,10 @@ LOGGING_CONFIG = {
             'maxBytes': 10000000,
             'backupCount': 5,
         },
-        'file.handler.mydebug': {
+        'file.handler.csvlog': {
             'class': 'logging.handlers.RotatingFileHandler',
-            'formatter': 'DebugFormatter',
-            'filename': 'app/logs/mydebug.log',
+            'formatter': 'CSVFormatter',
+            'filename': 'app/logs/csvlog.log',
             'maxBytes': 10000000,
             'backupCount': 5,
         },
@@ -99,8 +90,8 @@ LOGGING_CONFIG = {
             'level': 'INFO',
             'propagate': False
         },
-        'myDebug': {  # if __name__ == '__main__'
-            'handlers': ['file.handler.mydebug'],
+        'csvlog': {  # if __name__ == '__main__'
+            'handlers': ['file.handler.csvlog'],
             'level': 'DEBUG',
             'propagate': False
         },

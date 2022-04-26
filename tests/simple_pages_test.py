@@ -9,14 +9,10 @@ def test_request_main_menu_links(client):
     assert b'<a class="dropdown-item" href="/docker">Docker</a>' in response.data
     assert b'<a class="dropdown-item" href="flask">Python/ Flask</a>' in response.data
     assert b'<a class="dropdown-item" href="cicd">CI/ CD</a>' in response.data
-    assert b'<a class="dropdown-item" href="/pylint">Pylint & General definitions</a>' in response.data
+    assert b'<a class="dropdown-item" href="/pylint">Pylint' in response.data
     assert b'<a class="dropdown-item" href="/aaa">AAA Testing</a>' in response.data
     assert b'<a class="dropdown-item" href="/oops">OOPs</a>' in response.data
     assert b'<a class="dropdown-item" href="/solid">SOLID</a>' in response.data
-    assert b'<ul class="nav-item "><a href="/" class="nav-link' in response.data
-    assert b'<ul class="nav-item "><a href="/about" class="nav-link' in response.data
-    assert b'<ul class="nav-item "><a href="/Register" class="nav-link' in response.data
-    assert b'<ul class="nav-item "><a href="/login" class="nav-link' in response.data
 
 
 def test_request_home(client):
@@ -93,7 +89,7 @@ def test_register_page(client):
     """This makes the ci/cd page"""
     response = client.get("/register")
     assert response.status_code == 200
-    assert b"Registration Page" in response.data
+    assert b"Register" in response.data
 
 
 def test_login_page(client):

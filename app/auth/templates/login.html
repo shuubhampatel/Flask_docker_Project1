@@ -1,29 +1,40 @@
 {% extends "base.html" %}
 {% block navbaritems %}
-    <ul class="nav-item dropdown navbarcustomfontcolor ms-auto">
-        <a class="nav-link dropdown-toggle navbarcustomfontcolor" href="#" id="navbarDropdown" role="button"
-           data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Technology Articles
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="/git">Git</a>
-            <a class="dropdown-item" href="/docker">Docker</a>
-            <a class="dropdown-item" href="flask">Python/ Flask</a>
-            <a class="dropdown-item" href="cicd">CI/ CD</a>
-            <a class="dropdown-item" href="/pylint">Pylint & General definitions</a>
-            <a class="dropdown-item" href="/aaa">AAA Testing</a>
-            <a class="dropdown-item" href="/oops">OOPs</a>
-            <a class="dropdown-item" href="/solid">SOLID</a>
-        </div>
-    </ul>
+    {% if current_user.is_authenticated %}
+                            {{ render_nav_item('auth.dashboard','Dashboard' ) }}
+                            {{ render_nav_item('songs.songs_browse','My Songs' ) }}
+                            {{ render_nav_item('songs.songs_upload','Upload Songs' ) }}
+                            {{ render_nav_item('map.browse_locations','Browse Locations' ) }}
+                            {{ render_nav_item('map.location_upload','Upload Locations' ) }}
+                            {% if current_user.is_admin %}
+                                {{ render_nav_item('auth.browse_users','User Management' ) }}
+                            {% endif %}
 
-    <ul class="nav-item "><a href="/" class="nav-link navbarcustomfontcolor">Home</a></ul>
-    <ul class="nav-item "><a href="/about" class="nav-link navbarcustomfontcolor">About</a></ul>
-    <ul class="nav-item "><a href="/Register" class="nav-link navbarcustomfontcolor">Register</a></ul>
-    <ul class="nav-item"><a href="/login" class="nav-link active navbarcustomfontcolor"
-                            style="background-color: darkblue">Login</a></ul>
+                        {% else %}
+                            {{ render_nav_item('simple_pages.index', 'Home') }}
+                        {% endif %}
 
-    </div>
+                        {{ render_nav_item('simple_pages.about','About') }}
+                        {{ render_nav_item('simple_pages.welcome','Welcome') }}
+
+                <div class="navbar-nav d-flex">
+                    {% if current_user.is_authenticated %}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
+                               data-bs-toggle="dropdown" aria-expanded="false">
+                                My Account
+                            </a>
+                            <ul class="dropdown-menu " aria-labelledby="navbarDarkDropdownMenuLink">
+                                <li><a class="dropdown-item" href="{{ url_for("auth.edit_profile") }}">Manage Profile</a></li>
+                                <li><a class="dropdown-item" href="{{ url_for("auth.edit_account") }}">Manage Account</a></li>
+                                <li><a class="dropdown-item" href="{{ url_for("auth.logout") }}">Logout</a></li>
+                            </ul>
+                        </li>
+                    {% else %}
+                        {{ render_nav_item('auth.register','Register' ) }}
+                        {{ render_nav_item('auth.login','Login' ) }}
+                    {% endif %}
+                </div>
 {% endblock %}
 {% block content %}
     Login Page
