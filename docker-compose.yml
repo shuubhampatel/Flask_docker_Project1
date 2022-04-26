@@ -1,7 +1,6 @@
 version: "3.2"
 services:
   flask:
-    image: f4features/flask_docker_project1:base3
     environment:
       - FLASK_ENV=development
     build: .
@@ -10,6 +9,6 @@ services:
       - 80:5000
     stdin_open: true # docker run -i
     tty: true        # docker run -t
-    command: ["flask", "run"]
+    command: [ "flask", "run" ]
     volumes:
       - .:/home/myuser
