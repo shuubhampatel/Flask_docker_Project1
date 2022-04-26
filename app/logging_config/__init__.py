@@ -1,10 +1,12 @@
 import logging
+import os
 from logging.config import dictConfig
 
 import flask
-from flask import request, current_app, blueprints
+from flask import request, current_app
 
-from app.logging_config.log_formatters import RequestFormatter
+# from app.logging_config.log_formatters import RequestFormatter
+from app import config
 
 log_con = flask.Blueprint('log_con', __name__)
 
@@ -17,17 +19,17 @@ def after_request_logging(response):
         return response
     elif request.path.startswith('/bootstrap'):
         return response
-    current_app.logger.info("After Request")
-
-    log = logging.getLogger("myApp")
-    log.info("My App Logger")
-    log = logging.getLogger("csvlog")
-    log.debug("Debug Logger Message")
     return response
 
 
 @log_con.before_app_first_request
 def configure_logging():
+
+    # set the name of the apps log folder to logs
+    logdir = config.Config.LOG_DIR
+    # make a directory if it doesn't exist
+    if not os.path.exists(logdir):
+        os.mkdir(logdir)
     logging.config.dictConfig(LOGGING_CONFIG)
     log = logging.getLogger("myApp")
     log.info("My App Logger")
@@ -62,14 +64,14 @@ LOGGING_CONFIG = {
         'file.handler.myapp': {
             'class': 'logging.handlers.RotatingFileHandler',
             'formatter': 'RequestFormatter',
-            'filename': 'app/logs/myinfo.log',
+            'filename': os.path.join(config.Config.LOG_DIR, 'myapp.log'),
             'maxBytes': 10000000,
             'backupCount': 5,
         },
         'file.handler.csvlog': {
             'class': 'logging.handlers.RotatingFileHandler',
             'formatter': 'CSVFormatter',
-            'filename': 'app/logs/csvlog.log',
+            'filename': os.path.join(config.Config.LOG_DIR, 'csvlog.log'),
             'maxBytes': 10000000,
             'backupCount': 5,
         },
