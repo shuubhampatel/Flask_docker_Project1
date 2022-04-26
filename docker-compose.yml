@@ -1,6 +1,7 @@
 version: "3.2"
 services:
   flask:
+    image: f4features/flask_docker_project1:base3
     environment:
       - FLASK_ENV=development
     build: .
