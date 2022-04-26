@@ -19,12 +19,16 @@ def after_request_logging(response):
         return response
     elif request.path.startswith('/bootstrap'):
         return response
+    logging.config.dictConfig(LOGGING_CONFIG)
+    log = logging.getLogger("myApp")
+    log.info("My App Logger")
+    log = logging.getLogger("csvlog")
+    log.debug("CSV file upload Logger Message(first_request)")
     return response
 
 
 @log_con.before_app_first_request
 def configure_logging():
-
     # set the name of the apps log folder to logs
     logdir = config.Config.LOG_DIR
     # make a directory if it doesn't exist
