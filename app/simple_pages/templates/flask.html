@@ -1,29 +1,5 @@
 {% extends "base.html" %}
-{% block navbaritems %}
-    <ul class="nav-item dropdown navbarcustomfontcolor ms-auto">
-        <a class="nav-link dropdown-toggle navbarcustomfontcolor" href="#" id="navbarDropdown" role="button"
-           data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Technology Articles
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="/git">Git</a>
-            <a class="dropdown-item" href="/docker">Docker</a>
-            <a class="dropdown-item active" href="flask">Python/ Flask</a>
-            <a class="dropdown-item" href="cicd">CI/ CD</a>
-            <a class="dropdown-item" href="/pylint">Pylint & General definitions</a>
-            <a class="dropdown-item " href="/aaa">AAA Testing</a>
-            <a class="dropdown-item" href="/oops">OOPs</a>
-            <a class="dropdown-item" href="/solid">SOLID</a>
-        </div>
-    </ul>
 
-    <ul class="nav-item "><a href="/" class="nav-link navbarcustomfontcolor">Home</a></ul>
-    <ul class="nav-item "><a href="/about" class="nav-link navbarcustomfontcolor">About</a></ul>
-    <ul class="nav-item "><a href="/register" class="nav-link navbarcustomfontcolor">Register</a></ul>
-    <ul class="nav-item "><a href="/login" class="nav-link navbarcustomfontcolor">Login</a></ul>
-
-    </div>
-{% endblock %}
 {% block content %}
     <!-- main row 1 -->
     <div class="row">
@@ -87,7 +63,9 @@
                     <ul>
                         <li><b>workflows :</b></li>
                         <ul>
-                            <li>development.yml: development workflow only trigger when we get pull request on brach master. </li>
+                            <li>development.yml: development workflow only trigger when we get pull request on brach
+                                master.
+                            </li>
                             <li>production.yml : production workflow wil trigger when we push to master branch.</li>
                         </ul>
                     </ul>
@@ -113,7 +91,7 @@
 
                         <li><b>static</b></li>
                         <ul>
-                            <li>css </li>
+                            <li>css</li>
                             <li>images</li>
                             <li>js</li>
                         </ul>
@@ -128,24 +106,28 @@
                     <ul>
                         <li><b>__init__.py :</b> no use</li>
                         <li><b>conftest.py :</b> config file for testing.</li>
-                        <li><b>simple_pages_test.py: </b>this file contains all the test methods for all of the pages</li>
+                        <li><b>simple_pages_test.py: </b>this file contains all the test methods for all of the pages
+                        </li>
                     </ul>
                 </li>
                 <li>
                     <b>.gitignore:</b>A gitignore file specifies intentionally untracked files that Git should ignore.
                 </li>
                 <li>
-                   <b> docker-compose.yml :</b> this file specifies what images are required, what ports they need to expose,
+                    <b> docker-compose.yml :</b> this file specifies what images are required, what ports they need to
+                    expose,
                     whether they have access to the host filesystem, what commands should be run when they start up
                 </li>
                 <li>
-                    <b>Dockerfile:</b>A Dockerfile is a text document that contains all the commands a user could call on the command line to assemble an image
+                    <b>Dockerfile:</b>A Dockerfile is a text document that contains all the commands a user could call
+                    on the command line to assemble an image
                 </li>
                 <li>
-                   <b> readme.md </b>:A README file contains information about general directory/ project information.
+                    <b> readme.md </b>:A README file contains information about general directory/ project information.
                 </li>
                 <li>
-                   <b> requirments.txt :</b> this file contains all type of file that usually stores information about all the
+                    <b> requirments.txt :</b> this file contains all type of file that usually stores information about
+                    all the
                     libraries, modules, and packages in itself that are used while developing a particular project.
                 </li>
             </ul>
@@ -159,27 +141,31 @@
         <div class="col">
             <!-- row 1 image1 -->
             <div class="row mb-3">
-                <img src="{{ url_for('static', filename='images/flask1.png') }}" class="img-fluid mb-5 border border-dark"
+                <img src="{{ url_for('static', filename='images/flask1.png') }}"
+                     class="img-fluid mb-5 border border-dark"
                      alt="test page screenshot">
             </div>
             <!-- row 1 image1 end -->
             <!-- row 2 image2 -->
 
             <div class="row mb-3">
-                <img src="{{ url_for('static', filename='images/flask4.png') }}" class="img-fluid mb-5 border border-dark"
+                <img src="{{ url_for('static', filename='images/flask4.png') }}"
+                     class="img-fluid mb-5 border border-dark"
                      alt="index test page screenshot">
             </div>
             <!-- row 2 image2 end -->
             <!-- row 3 image3 -->
 
             <div class="row mb-3">
-                <img src="{{ url_for('static', filename='images/flask2.png') }}" class="img-fluid mb-5 border border-dark"
+                <img src="{{ url_for('static', filename='images/flask2.png') }}"
+                     class="img-fluid mb-5 border border-dark"
                      alt="Project outline">
             </div>
             <!-- row 3 image3 end -->
             <!-- row 3 image4  -->
             <div class="row mb-3">
-                <img src="{{ url_for('static', filename='images/flask3.png') }}" class="img-fluid mb-5 border border-dark"
+                <img src="{{ url_for('static', filename='images/flask3.png') }}"
+                     class="img-fluid mb-5 border border-dark"
                      alt="Project outline">
             </div>
             <!-- row 3 image4 end -->
@@ -188,4 +174,15 @@
 
     </div>
     <!-- main row 1 end-->
+
+    <style>
+        body {
+            font-size: 120%;
+        }
+        .navbar-nav > .active > a {
+            color: black;
+        }
+
+    </style>
+
 {% endblock %}

@@ -1,31 +1,7 @@
 {% extends "base.html" %}
-{% block navbaritems %}
-    <ul class="nav-item dropdown navbarcustomfontcolor ms-auto">
-        <a class="nav-link dropdown-toggle navbarcustomfontcolor" href="#" id="navbarDropdown" role="button"
-           data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Technology Articles
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item active" href="/git">Git</a>
-            <a class="dropdown-item" href="/docker">Docker</a>
-            <a class="dropdown-item" href="flask">Python/ Flask</a>
-            <a class="dropdown-item" href="cicd">CI/ CD</a>
-            <a class="dropdown-item" href="/pylint">Pylint & General definitions</a>
-            <a class="dropdown-item" href="/aaa">AAA Testing</a>
-            <a class="dropdown-item" href="/oops">OOPs</a>
-            <a class="dropdown-item" href="/solid">SOLID</a>
-        </div>
-    </ul>
 
-    <ul class="nav-item "><a href="/" class="nav-link navbarcustomfontcolor">Home</a></ul>
-    <ul class="nav-item "><a href="/about" class="nav-link navbarcustomfontcolor">About</a></ul>
-    <ul class="nav-item "><a href="/register" class="nav-link navbarcustomfontcolor">Register</a></ul>
-    <ul class="nav-item "><a href="/login" class="nav-link navbarcustomfontcolor">Login</a></ul>
-
-    </div>
-{% endblock %}
 {% block content %}
-<!-- main row 1 -->
+    <!-- main row 1 -->
     <div class="row">
         <!-- col 1 -->
         <h4>Lets read about Git</h4>
@@ -94,8 +70,8 @@
                 </li>
 
                 <li><h5>Tags:</h5> are specific reference points in git history. Git tags are used to capture a specific
-                point in history that is further used to point to a released version. You can create a tag with git
-                <b>tag <-a feature1.1> </b>(also known as annotated tags)
+                    point in history that is further used to point to a released version. You can create a tag with git
+                    <b>tag <-a feature1.1> </b>(also known as annotated tags)
                 </li>
 
             </ul>
@@ -115,13 +91,15 @@
             <!-- row 2 image2 -->
 
             <div class="row mb-3">
-                <img src="{{ url_for('static', filename='images/git2.png') }}" class="img-fluid mb-5 border border-dark" alt="Repositories">
+                <img src="{{ url_for('static', filename='images/git2.png') }}" class="img-fluid mb-5 border border-dark"
+                     alt="Repositories">
             </div>
             <!-- row 2 image2 end -->
             <!-- row 3 image3 -->
 
             <div class="row mb-3">
-                <img src="{{ url_for('static', filename='images/git3.png') }}" class="img-fluid mb-5 border border-dark" alt="Git lifecycle">
+                <img src="{{ url_for('static', filename='images/git3.png') }}" class="img-fluid mb-5 border border-dark"
+                     alt="Git lifecycle">
             </div>
             <!-- row 3 image3 end -->
 
@@ -130,4 +108,14 @@
 
     </div>
     <!-- main row 1 end-->
+
+    <style>
+        body {
+            font-size: 120%;
+        }
+        .navbar-nav > .active > a {
+            color: black;
+        }
+    </style>
+
 {% endblock %}
