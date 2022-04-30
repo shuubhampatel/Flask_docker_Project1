@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+
 {% block content %}
     <!-- main row 1 -->
     <div class="row">
@@ -27,9 +28,17 @@
 
             </ul>
             </p>
-            </p> to use github actions first i have to wite workflow file to tell when this actions is going to hit so in this project i have 2 workflow file which is production and development.
-            <ul><li> at the time of <b>pushing </b>to master branch my production workflow will trigger and first run ubuntu server then it will start to install all the dependecies and next is building new image in given repo to docker Hub. and at the and after building new image it will deploy to heroku. </li>
-                <li>at the time of<b> pull request </b>on master branch at that time my development workflow will trigger and in that development workflow first it checks all test and then it will deploy to heroku</li></p>
+            </p> to use github actions first i have to wite workflow file to tell when this actions is going to hit so
+            in this project i have 2 workflow file which is production and development.
+            <ul>
+                <li> at the time of <b>pushing </b>to master branch my production workflow will trigger and first run
+                    ubuntu server then it will start to install all the dependecies and next is building new image in
+                    given repo to docker Hub. and at the and after building new image it will deploy to heroku.
+                </li>
+                <li>at the time of<b> pull request </b>on master branch at that time my development workflow will
+                    trigger and in that development workflow first it checks all test and then it will deploy to heroku
+                </li>
+                </p>
         </div>
         <!-- col 1 end -->
         <!-- col 2 for images -->
@@ -37,21 +46,24 @@
         <div class="col">
             <!-- row 1 image1 -->
             <div class="row mb-3">
-                <img src="{{ url_for('static', filename='images/cicd1.png') }}" class="img-fluid mb-5 border border-dark"
+                <img src="{{ url_for('static', filename='images/cicd1.png') }}"
+                     class="img-fluid mb-5 border border-dark"
                      alt="Image 1">
             </div>
             <!-- row 1 image1 end -->
             <!-- row 2 image2 -->
 
             <div class="row mb-3">
-                <img src="{{ url_for('static', filename='images/cicd2.png') }}" class="img-fluid mb-5 border border-dark"
+                <img src="{{ url_for('static', filename='images/cicd2.png') }}"
+                     class="img-fluid mb-5 border border-dark"
                      alt="Image 2">
             </div>
             <!-- row 2 image2 end -->
             <!-- row 3 image3 -->
 
             <div class="row mb-3">
-                <img src="{{ url_for('static', filename='images/cicd3.png') }}" class="img-fluid mb-5 border border-dark"
+                <img src="{{ url_for('static', filename='images/cicd3.png') }}"
+                     class="img-fluid mb-5 border border-dark"
                      alt="Image 3">
             </div>
             <!-- row 3 image3 end -->
@@ -61,5 +73,16 @@
 
     </div>
     <!-- main row 1 end-->
+
+    <style>
+        body {
+            font-size: 120%;
+        }
+
+        .navbar-nav > .active > a {
+            color: black;
+        }
+    </style>
+
 
 {% endblock %}

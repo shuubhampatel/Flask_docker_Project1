@@ -1,12 +1,14 @@
 version: "3.2"
 services:
   flask:
-    image: f4features/flask_docker_project1:base3
+    environment:
+      - FLASK_ENV=development
+    build: .
     restart: always
     ports:
       - 80:5000
     stdin_open: true # docker run -i
     tty: true        # docker run -t
-    command: gunicorn -w 2 --bind 0.0.0.0:5000 "app:create_app()"
+    command: [ "flask", "run" ]
     volumes:
       - .:/home/myuser

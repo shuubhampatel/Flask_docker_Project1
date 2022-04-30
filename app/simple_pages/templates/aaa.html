@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+
 {% block content %}
 
     <div class="nav-item active">
@@ -67,21 +68,24 @@
             <div class="col">
                 <!-- row 1 image1 -->
                 <div class="row mb-3">
-                    <img src="{{ url_for('static', filename='images/aaa1.png') }}" class="img-fluid mb-5 border border-dark"
+                    <img src="{{ url_for('static', filename='images/aaa1.png') }}"
+                         class="img-fluid mb-5 border border-dark"
                          alt="AAA Image 1">
                 </div>
                 <!-- row 1 image1 end -->
                 <!-- row 2 image2 -->
 
                 <div class="row mb-3">
-                    <img src="{{ url_for('static', filename='images/aaa2.png') }}" class="img-fluid mb-5 border border-dark"
+                    <img src="{{ url_for('static', filename='images/aaa2.png') }}"
+                         class="img-fluid mb-5 border border-dark"
                          alt="AAA Image 2">
                 </div>
                 <!-- row 2 image2 end -->
                 <!-- row 3 image3 -->
 
                 <div class="row mb-3">
-                    <img src="{{ url_for('static', filename='images/aaa3.png') }}" class="img-fluid mb-5 border border-dark"
+                    <img src="{{ url_for('static', filename='images/aaa3.png') }}"
+                         class="img-fluid mb-5 border border-dark"
                          alt="AAA Image 3">
                 </div>
                 <!-- row 3 image3 end -->
@@ -117,5 +121,15 @@
         <!-- main row 1 end-->
 
     </div>
+
+    <style>
+        body {
+            font-size: 120%;
+        }
+        .navbar-nav > .active > a {
+            color: black;
+        }
+    </style>
+
 
 {% endblock %}
